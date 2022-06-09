@@ -9,11 +9,12 @@ const Navbar = () => {
                 <a href="">Recipes</a>
                 <a href="">Setting</a>
             </div>
+            <div className="sidebar-btn">
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
+            </div>
         </div>
-        // <div className="navbar">
-        //     <p>rakib</p>
-        //     <p>rakib</p>
-        // </div>
 
     )
 }
