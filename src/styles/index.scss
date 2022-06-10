@@ -37,7 +37,10 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  //   position: fixed;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 998;
   .logo {
     font-size: 1.5em;
     font-weight: bolder;
@@ -54,6 +57,7 @@ a {
       letter-spacing: 2px;
       text-transform: uppercase;
       position: relative;
+      font-size: 0.9em;
       &::before {
         content: "";
         display: inline-block;
@@ -64,7 +68,7 @@ a {
         bottom: -5px;
         left: 0;
         transform: scaleX(0);
-        transition: transform getAnimationDuration(0.2s) ease-in-out;
+        transition: getAnimationDuration(0.2s) ease-in-out;
       }
       &:hover {
         &::before {
@@ -89,7 +93,7 @@ a {
       width: 100%;
       background-color: var(--text-color);
       position: absolute;
-      transition: transform getAnimationDuration(0.2s);
+      transition: transform getAnimationDuration(0.5s);
       &:nth-child(1) {
         top: 0;
       }
@@ -118,6 +122,38 @@ a {
           transform: translate(0, -50%) scale(1) rotate(-45deg);
         }
       }
+    }
+  }
+}
+
+//thats sidebar part
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 260px;
+  z-index: 999;
+  background-color: var(--background-color);
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.2), 3px 0 5px var(--shadow-color);
+  .sidebar-link {
+    display: block;
+    padding: 0.5em 1em;
+    border-left: 0.4em solid transparent;
+    margin-bottom: 1em;
+    color: var(--text-color);
+    // font-weight: bold;
+    font-size: 1.1em;
+    &.active {
+      border-left: var(--primary-color);
+    }
+    &:hover {
+      border-left-color: var(--primary-color);
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    svg {
+      width: 1.2em;
+      margin-right: 0.5em;
     }
   }
 }
