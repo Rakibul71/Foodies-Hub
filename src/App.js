@@ -1,17 +1,49 @@
-// import "styles/index.scss"
+// // import "styles/index.scss"
 
-import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
+// import HeroSection from "./components/HeroSection";
+// import Navbar from "./components/Navbar";
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <Navbar />
+//       <div className="container main">
+//         <HeroSection />
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom"
+
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import Recipes from "./pages/Recipes";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Navbar />
       <div className="container main">
-        <HeroSection />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
       </div>
-    </div>
-  );
+      <Footer />
+    </Router>
+  )
 }
 
 export default App;
